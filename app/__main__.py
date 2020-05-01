@@ -8,9 +8,9 @@ import api
 import settings
 import os
 
-EMAIL = os.getenv("EMAIL")
+EMAIL = os.getenv("EMAIL","value does not exist")
 
-HASH = os.getenv("HASH")
+HASH = os.getenv("HASH","value does not exist")
 
 dog = api.PowerDog(EMAIL,HASH)
 
