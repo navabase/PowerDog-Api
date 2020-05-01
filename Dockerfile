@@ -11,7 +11,7 @@ RUN apk add git
 
 # copy the app, note .dockerignore
 COPY . /usr/src/api/
-RUN python3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # build necessary, even if no static files are needed,
 # since it builds the server as well
