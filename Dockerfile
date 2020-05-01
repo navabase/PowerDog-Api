@@ -22,5 +22,5 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 EXPOSE $PORT
 
 # start the app
-ENTRYPOINT [ "app" ]
-CMD ["python3" ,"__main__.py"]
+
+CMD ["python3" ,"app/__main__.py"]
