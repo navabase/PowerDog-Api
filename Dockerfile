@@ -21,4 +21,4 @@ RUN pip3 install -r requirements.txt
 EXPOSE $PORT
 
 # start the app
-CMD exec gunicorn — bind :$PORT — workers 1 — threads 8 app:app/__main__.py
+CMD gunicorn -b 0.0.0.0:80 app/__main__.py
