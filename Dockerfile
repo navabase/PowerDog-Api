@@ -35,7 +35,7 @@ RUN pip install Flask gunicorn
 # Copy local code to the container image.
 WORKDIR /api
 COPY . .
-
+RUN pip3 install --no-cache-dir -r requirements.txt
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
 ENV PORT 8080
