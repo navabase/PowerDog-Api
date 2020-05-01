@@ -60,4 +60,4 @@ def Api(key,method):
             return dog.getCounterData(CounterId,start,end)
     return render_template('notAllowed.html',pwd=key)
 if __name__ == '__main__':
-    app.run(debug=True,port=8080)
+    app.run(debug=True,port=80)
