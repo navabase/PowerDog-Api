@@ -11,7 +11,6 @@ class PowerDog():
         self.apiKey = self.api(email,md5hash)['apikey']
         print("key",self.apiKey)    
 
-	
     def api(self,email,md5hash):
         print("vlaues:",email,md5hash)
         print("server",self.server)
