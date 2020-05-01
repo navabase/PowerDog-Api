@@ -17,4 +17,4 @@ EXPOSE $PORT
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
 
-CMD cd app && gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app:app
+CMD cd app && exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app:app
