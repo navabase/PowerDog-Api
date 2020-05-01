@@ -14,7 +14,7 @@ EMAIL = os.getenv("EMAIL","value does not exist")
 
 HASH = os.getenv("HASH","value does not exist")
 
-apiPWD = os.getenv("PWD","1234")
+APIKEY = os.getenv("APIKEY","1234")
 
 dog = api.PowerDog(EMAIL,HASH)
 
@@ -34,7 +34,7 @@ def index():
 @app.route('/api/v1/<key>/<method>')
 def Api(key,method):
     print("method",method)
-    if(key == apiPWD): # change the password here
+    if(key == APIKEY): # change the password here
         if(method == "getPowerDogs"):
             return dog.getPowerDogs()
         elif (method == "getInverters"):
