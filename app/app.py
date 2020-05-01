@@ -8,7 +8,7 @@ import api
 import settings
 import os
 
-PORT = os.getenv("PORT","8080")
+PORT = os.getenv("PORT","80")
 
 EMAIL = os.getenv("EMAIL","value does not exist")
 

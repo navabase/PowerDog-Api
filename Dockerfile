@@ -11,7 +11,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # This default value facilitates local development.
 
 ENV PORT 8080
-EXPOSE $PORT
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
 # For environments with multiple CPU cores, increase the number of workers
