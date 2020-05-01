@@ -8,6 +8,7 @@ import api
 import settings
 import os
 
+PORT = os.getenv("PORT","80")
 EMAIL = os.getenv("EMAIL","value does not exist")
 
 HASH = os.getenv("HASH","value does not exist")
@@ -60,4 +61,4 @@ def Api(key,method):
             return dog.getCounterData(CounterId,start,end)
     return render_template('notAllowed.html',pwd=key)
 if __name__ == '__main__':
-    app.run(debug=True,port=8080)
+    app.run(debug=True,port=PORT)

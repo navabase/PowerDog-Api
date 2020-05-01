@@ -18,7 +18,7 @@ RUN pip3 install -r requirements.txt
 
 
 # expose 5000 on container
-# EXPOSE 8080
+EXPOSE $PORT
 
 # start the app
 CMD [ "python3", "app/__main__.py" ]
