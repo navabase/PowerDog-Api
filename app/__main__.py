@@ -9,6 +9,7 @@ import settings
 import os
 
 EMAIL = os.getenv("EMAIL")
+
 HASH = os.getenv("HASH")
 
 dog = api.PowerDog(EMAIL,HASH)
