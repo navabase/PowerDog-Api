@@ -11,7 +11,8 @@ RUN apk add git
 
 # copy the app, note .dockerignore
 COPY . /usr/src/api/
-RUN pip3 install -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
+ 
 
 # build necessary, even if no static files are needed,
 # since it builds the server as well
@@ -21,4 +22,5 @@ RUN pip3 install -r requirements.txt
 EXPOSE $PORT
 
 # start the app
-CMD gunicorn -b 0.0.0.0:$PORT app/__main__.py
+ENTRYPOINT [ "python" ]
+CMD ["python3" ,"app/__main__.py"]
