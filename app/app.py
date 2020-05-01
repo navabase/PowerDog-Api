@@ -34,7 +34,7 @@ def index():
 @app.route('/api/v1/<key>/<method>')
 def Api(key,method):
     print("method",method)
-    if(key == ): # change the password here
+    if(key == apiPWDt): # change the password here
         if(method == "getPowerDogs"):
             return dog.getPowerDogs()
         elif (method == "getInverters"):

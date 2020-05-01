@@ -1,32 +1,3 @@
-# FROM node:11.13.0-alpine
-
-# # create destination directory
-# RUN mkdir -p /usr/src/api
-# WORKDIR /usr/src/api
-
-# # update and install dependency
-# RUN apk update && apk upgrade
-# RUN apk add python3
-# RUN apk add git
-
-# # copy the app, note .dockerignore
-# COPY . /usr/src/api/
-# RUN pip3 install --no-cache-dir -r requirements.txt
- 
-
-# # build necessary, even if no static files are needed,
-# # since it builds the server as well
-
-
-# # expose 5000 on container
-# ENV PORT 8080
-# EXPOSE $PORT
-
-# # start the app
-
-# CMD ["python3" ,"app/__main__.py"]
-# Use an official lightweight Python image.
-# https://hub.docker.com/_/python
 FROM python:3.7-slim
 
 # Install production dependencies.
@@ -45,4 +16,4 @@ ENV PORT 8080
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
 
-CMD cd app/ && exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app:app
+CMD cd app/ && gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app:app
