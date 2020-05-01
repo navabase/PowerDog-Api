@@ -46,4 +46,6 @@ ENV PORT 8080
 # to be equal to the cores available.
 RUN cd app/
 
+WORKDIR /app
+
 CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app:app
