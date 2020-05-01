@@ -33,7 +33,7 @@ FROM python:3.7-slim
 RUN pip install Flask gunicorn
 
 # Copy local code to the container image.
-WORKDIR /app
+WORKDIR /api
 COPY . .
 
 # Service must listen to $PORT environment variable.
@@ -44,4 +44,6 @@ ENV PORT 8080
 # webserver, with one worker process and 8 threads.
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
-CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app/__main__:app
+RUN cd app/
+
+CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app:app
