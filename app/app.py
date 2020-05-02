@@ -51,8 +51,8 @@ def Api(key,method):
 
         elif (method == "getPhotovoltaicBorders"):
             PowerDogId = request.args.get('PowerDogId',default = 1, type = int)
-            month = request.args.get('month',default = 2020, type = int)
-            year = request.args.get('year',default = 1, type = int)
+            month = request.args.get('month',default = 1, type = int)
+            year = request.args.get('year',default = 2020, type = int)
             return dog.getPhotovoltaicBorders(PowerDogId,month,year)
         elif (method == "getSensorData"):
             SensorsId = request.args.get('SensorId',default = 0000, type = int)
