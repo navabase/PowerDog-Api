@@ -3,7 +3,7 @@ Implementation of the official web-api by [power-dog](https://power-dog.eu)
 
 ## Why we build this Api?
 - The originial API is based on [xmlrpc](https://de.wikipedia.org/wiki/XML-RPC) as we tried to build our website with the xmlrpc client we run into several problems.
-- What we wanted: easy to use Api without having to deal with frustrating xmlrpc issues and good error responses, because the original API often repsone with a default error, leaving you in the dark. 
+- What we wanted: easy to use Api without having to deal with frustrating xmlrpc issues and good error responses, because the original API often response with a default error, leaving you in the dark. 
 ## pre-requirements:
 - [python3](https://www.python.org/)
 ## How to install:
