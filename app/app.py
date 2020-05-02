@@ -16,6 +16,8 @@ HASH = os.getenv("HASH","value does not exist")
 
 APIKEY = os.getenv("APIKEY","1234")
 
+environment = os.getenv("NODE_ENV")
+
 dog = api.PowerDog(EMAIL,HASH)
 
 app = Flask(__name__)
@@ -64,4 +66,7 @@ def Api(key,method):
             return dog.getCounterData(CounterId,start,end)
     return render_template('notAllowed.html',pwd=key)
 if __name__ == '__main__':
-    app.run(debug=True,port=PORT)
+    if(environment == "production"):
+        app.run(debug=False,port=PORT)    
+    else:
+        app.run(debug=True,port=PORT)
