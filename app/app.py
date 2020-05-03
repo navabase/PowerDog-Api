@@ -1,6 +1,7 @@
 #!flask/bin/python
 from flask import Flask
 from flask import render_template
+from flask_cors import CORS
 from flask import request
 import calendar
 import time
@@ -21,6 +22,8 @@ environment = os.getenv("NODE_ENV")
 dog = api.PowerDog(EMAIL,HASH)
 
 app = Flask(__name__)
+
+CORS(app)
 
 def StartUTConeDay():
     end = calendar.timegm(time.gmtime())
